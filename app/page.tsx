@@ -32,6 +32,18 @@ const projects = [
     accent: "#a78bfa",
   },
   {
+    title: "tenet",
+    category: "AI Engineering",
+    description: "Plugin para Claude Code que aplica un método de ingeniería en cualquier repo: workflows, agentes de mínimo privilegio, un guard de seguridad y memoria persistente.",
+    highlights: ["Spec-driven development con OpenSpec", "Hook que bloquea comandos destructivos y pide permiso antes de push o deploy", "Instaladores para Windows y Linux con dry-run y backups"],
+    imageSrc: "/images/tenet.png",
+    tags: ["Claude Code", "Python", "OpenSpec"],
+    href: "https://github.com/nobodyh-ctrl/tenet-plugin",
+    gradientFrom: "#431407",
+    gradientTo: "#ea580c",
+    accent: "#ff7a1a",
+  },
+  {
     title: "PortScan",
     category: "Networking",
     description: "Escáner de puertos TCP por línea de comandos que identifica puertos abiertos, cerrados y filtrados en equipos de una red.",
