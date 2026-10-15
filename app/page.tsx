@@ -16,44 +16,23 @@ import ExperienceSection from "@/components/experience-section"
 import SectionBackdrop from "@/components/section-backdrop"
 import SiteFooter from "@/components/site-footer"
 import TechIcon, { type Tech } from "@/components/tech-icon"
+import { projects } from "@/lib/projects"
 import { site } from "@/lib/site"
 
-const projects = [
+const education = [
   {
-    title: "OpenAegis",
-    category: "Cloud Security",
-    description: "Aplicación serverless que evalúa configuraciones de seguridad en AWS y centraliza los hallazgos con controles automatizados de solo lectura.",
-    highlights: ["S3, CloudFront, API Gateway y Lambda", "Permisos con IAM y monitoreo en CloudWatch", "Evolución hacia IaC y prácticas DevSecOps"],
-    imageSrc: "/images/openaegis.png",
-    tags: ["Python", "AWS", "Serverless"],
-    href: "https://github.com/nobodyh-ctrl/openaegis",
-    gradientFrom: "#1e1b4b",
-    gradientTo: "#7c3aed",
-    accent: "#a78bfa",
+    period: "2024 — Actualidad",
+    degree: "Tecnicatura Universitaria en Programación",
+    institution: "Universidad Tecnológica Nacional",
+    logo: "/images/utn-logo.png",
+    detail: "Algoritmos, estructuras de datos, arquitectura de computadoras, sistemas operativos, C, C++, C#, programación web, bases de datos, metodologías de sistemas, Scrum y análisis de datos.",
   },
   {
-    title: "tenet",
-    category: "AI Engineering",
-    description: "Plugin para Claude Code que aplica un método de ingeniería en cualquier repo: workflows, agentes de mínimo privilegio, un guard de seguridad y memoria persistente.",
-    highlights: ["Spec-driven development con OpenSpec", "Hook que bloquea comandos destructivos y pide permiso antes de push o deploy", "Instaladores para Windows y Linux con dry-run y backups"],
-    imageSrc: "/images/tenet.png",
-    tags: ["Claude Code", "Python", "OpenSpec"],
-    href: "https://github.com/nobodyh-ctrl/tenet-plugin",
-    gradientFrom: "#431407",
-    gradientTo: "#ea580c",
-    accent: "#ff7a1a",
-  },
-  {
-    title: "PortScan",
-    category: "Networking",
-    description: "Escáner de puertos TCP por línea de comandos que identifica puertos abiertos, cerrados y filtrados en equipos de una red.",
-    highlights: ["Rangos de puertos y timeouts configurables", "Reportes automáticos de cada escaneo", "Probado en laboratorio con Ubuntu Server y firewall"],
-    imageSrc: "/images/portscan.png",
-    tags: ["Python", "Sockets", "CLI"],
-    href: "https://github.com/nobodyh-ctrl/portscan",
-    gradientFrom: "#022c22",
-    gradientTo: "#10b981",
-    accent: "#34d399",
+    period: "Desde 2027",
+    degree: "Licenciatura en Ciberseguridad",
+    institution: "Universidad Nacional de Hurlingham (UNAHUR)",
+    logo: "/images/unahur-logo.png",
+    upcoming: true,
   },
 ]
 
@@ -151,7 +130,7 @@ export default function Page() {
 
             <RevealOnView className="relative overflow-hidden rounded-3xl border border-white/10 bg-neutral-900/60 p-6 sm:p-8" id="skills">
               <SectionBackdrop src="/images/project-6.webp" />
-              <div className="relative mb-6 flex items-center gap-3"><Code2 className="h-5 w-5 text-white/60" /><h2 className="text-2xl font-bold">Skills técnicas</h2></div>
+              <div className="relative mb-6 flex items-center gap-3"><Code2 className="h-5 w-5 text-white/60" /><h2 className="text-2xl font-bold">Stack Operativo</h2></div>
               <div className="relative space-y-6">
                 {skillGroups.map((group) => (
                   <div key={group.title}>
@@ -173,7 +152,27 @@ export default function Page() {
               <SectionBackdrop src="/images/project-2.webp" />
               <div className="relative">
                 <div className="mb-6 flex items-center gap-3"><GraduationCap className="h-5 w-5 text-white/60" /><h2 className="text-2xl font-bold">Formación</h2></div>
-                <p className="text-sm text-white/45">2024 — Actualidad</p><p className="mt-1 font-semibold">Tecnicatura Universitaria en Programación</p><p className="text-white/60">Universidad Tecnológica Nacional</p><p className="mt-2 text-sm text-white/45">Algoritmos, estructuras de datos, arquitectura de computadoras, sistemas operativos, C, C++, C#, programación web, bases de datos, metodologías de sistemas, Scrum y análisis de datos.</p>
+                <div className="space-y-6">
+                  {education.map((item) => (
+                    <article key={item.degree} className="flex gap-4">
+                      {/* Light plate: both logos are dark-on-transparent and vanish on the dark theme */}
+                      <div className="relative h-16 w-16 shrink-0 rounded-2xl bg-white/90 shadow-[0_8px_24px_-12px_rgba(255,255,255,0.35)]">
+                        <Image src={item.logo} alt={item.institution} fill sizes="64px" className="object-contain p-2.5" />
+                      </div>
+                      <div>
+                        <div className="flex flex-wrap items-center gap-2">
+                          <p className="text-sm text-white/45">{item.period}</p>
+                          {item.upcoming && (
+                            <span className="rounded-full border border-cyan-400/40 bg-cyan-400/10 px-2 py-0.5 text-xs text-cyan-300">Próximamente</span>
+                          )}
+                        </div>
+                        <p className="mt-1 font-semibold">{item.degree}</p>
+                        <p className="text-white/60">{item.institution}</p>
+                        {item.detail && <p className="mt-2 text-sm text-white/45">{item.detail}</p>}
+                      </div>
+                    </article>
+                  ))}
+                </div>
               </div>
             </RevealOnView>
 

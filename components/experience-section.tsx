@@ -111,7 +111,7 @@ export default function ExperienceSection() {
         aria-hidden="true"
       />
 
-      <div className="relative mb-6 flex items-center gap-3"><BriefcaseBusiness className="h-5 w-5 text-white/60" /><h2 className="text-2xl font-bold">Experiencia</h2></div>
+      <div className="relative mb-6 flex items-center gap-3"><BriefcaseBusiness className="h-5 w-5 text-white/60" /><h2 className="text-2xl font-bold">Trayectoria Laboral</h2></div>
 
       <div role="tablist" aria-label="Experiencia laboral" className="relative grid gap-2 sm:grid-cols-3">
         {jobs.map((j, i) => {

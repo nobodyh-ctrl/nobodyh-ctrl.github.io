@@ -62,7 +62,7 @@ public/
 | Email, teléfono, GitHub, LinkedIn | `lib/site.ts` |
 | Experiencia laboral | array `jobs` en `components/experience-section.tsx` |
 | Skills | array `skillGroups` en `app/page.tsx` |
-| Proyectos | array `projects` en `app/page.tsx` |
+| Proyectos (tarjeta y panel "Explorar proyecto") | array `projects` en `lib/projects.ts` |
 | CV | reemplazar `public/cv-facundo-diaz.pdf`, con el mismo nombre |
 
 ## Despliegue
